@@ -17,7 +17,7 @@ const Register = () => {
     e.preventDefault();
     if (isFormValid) {
       try {
-        const response = await axiosInstance.post("/api/user/register", {
+        const response = await axiosInstance.post("/users/register", {
           firstName,
           lastName,
           email,
@@ -38,9 +38,13 @@ const Register = () => {
 
   return (
     <div className="register-container">
+      <div className="heading"> 
+        <img src="/bank_logo.png" alt="Logo" className="logo-image" style={{width:"50px"}} />
+        <span>National Bank</span>
+      </div>
       <div className="register-box">
         <div className="top-right">English (UK)</div>
-        <div className="title">Create Account</div>
+        <div className="title">Sign Up</div>
         <form onSubmit={handleRegister} className="register-form">
           <div className="name">
             <div className="form-group">
@@ -91,7 +95,7 @@ const Register = () => {
           </button>
         </form>
         <div className="login-link">
-          Already have an account? <Link to="/login">Login</Link>
+          Already have an account? <Link to="/login">Signin</Link>
         </div>
       </div>
     </div>

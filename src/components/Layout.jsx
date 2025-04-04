@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import '../css/Layout.css'; // Import CSS for styling the layout
+import TransactionService from "../api/TransactionService";
 
 const Layout = ({ children }) => {
   const navigate = useNavigate();
@@ -15,7 +16,10 @@ const Layout = ({ children }) => {
   return (
     <div className="layout">
       <div className="layout-header">
-        <h1>Commerce Bank</h1>
+        <div className="header-logo-title">
+          <img src="/bank_logo.png" alt="Logo" className="logo-image" />
+          <h1>National Bank</h1>
+        </div>
         {/* Logout button on the top right */}
         <button onClick={handleLogout} className="logout-button">
           Logout

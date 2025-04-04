@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
     if (isFormValid) {
       try {
-        const response = await axiosInstance.post("/api/user/login", {
+        const response = await axiosInstance.post("/users/login", {
           email: username,
           password: password,
         });
@@ -38,23 +38,20 @@ const Login = () => {
     }
   };
 
+  const openRegister = async() => {
+    navigate("/register");
+  };
+
   return (
     <div className="login-container">
+      <div className="heading"> 
+        <img src="/bank_logo.png" alt="Logo" className="logo-image" style={{width:"50px"}} />
+        <span>National Bank</span>
+      </div>
       <div className="login-box">
-        <div
-          className="title"
-          style={{ marginBottom: "20px", fontSize: "28px" }}
-        >
-          Budget Planner
-        </div>
-        <div className="title" style={{ fontSize: "20px", margin: 0 }}>
-          Login
-        </div>
-        <div
-          className="title"
-          style={{ fontWeight: 300, color: "#282B2D", fontSize: "20px" }}
-        >
-          Sign in to your account
+        <div className="top-right">English (UK)</div>
+        <div className="title">
+          Signin
         </div>
         <form onSubmit={handleLogin} className="login-form">
           <div className="form-group">
@@ -81,14 +78,12 @@ const Login = () => {
             disabled={!isFormValid}
             className="login-button"
           >
-            Login
+            Signin
           </button>
         </form>
-        <form className="login-form">
+        <form className="register-button-form" onSubmit={openRegister}>
           <button type="submit" className="register-button">
-            <Link to="/register" className="register-link">
-              Register new account
-            </Link>
+              Create new account
           </button>
         </form>
       </div>

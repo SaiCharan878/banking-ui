@@ -8,12 +8,12 @@ import {
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import BudgetScreen from "./components/BudgetScreen";
 import ExpenseTracker from "./components/ExpenseTracker";
 import Layout from "./components/Layout";
-import Dashboard from "./components/Dashboard";
 import Trends from "./components/Trends";
 import DebtTracker from "./components/DebtTracker";
+import TransactionPage from "./components/TransactionPage";
+import FinancialGrowthInsights from "./components/FinancialGrowthInsights";
 
 const App = () => {
   return (
@@ -22,13 +22,13 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/home" element={<Layout><Home /></Layout>} />
-        <Route path="/budgets" element={<Layout><BudgetScreen /></Layout>} />
         <Route path="/expense-tracker" element={<Layout><ExpenseTracker /></Layout>} />
-        <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
         <Route path="/trends" element={<Layout><Trends /></Layout>} />
         <Route path="/debt-tracker" element={<Layout><DebtTracker /></Layout>} />
+        <Route path="/transaction" element={<Layout><TransactionPage /></Layout>} />
+        <Route path="/investment-insights" element={<Layout><FinancialGrowthInsights/></Layout>} />
       </Routes>
     </Router>
   );
